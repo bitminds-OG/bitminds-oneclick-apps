@@ -12,7 +12,6 @@ caproverOneClickApp:
     variables:
         - id: $$cap_next_url
           label: Next.js Application Url
-          defaultValue: ''
           description: ''
         - id: $$cap_prometheus_ip
           label: Prometheus Instance IP
