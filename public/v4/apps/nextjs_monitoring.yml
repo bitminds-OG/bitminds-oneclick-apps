@@ -18,7 +18,7 @@ caproverOneClickApp:
           label: Prometheus Instance IP
           description: ''
     instructions:
-        start: "This Container exports Next.js analytics into Prometheus"
-        end: "You can now push Next.js Metrics to this container under the /ingest path"
+        start: 'This Container exports Next.js analytics into Prometheus'
+        end: 'You can now push Next.js Metrics to this container under the /ingest path'
     displayName: Next.js Prometheus Exporter
     description: Next.js Prometheus Exporter allows to export Next.js Analytics to Prometheus
