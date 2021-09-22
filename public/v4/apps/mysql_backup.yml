@@ -1,0 +1,51 @@
+captainVersion: 4
+services:
+    $$cap_appname:
+        image: ghcr.io/bitminds-og/mysql-backup:main
+        restart: always
+        environment:
+            DB_HOST: $$cap_db_host
+            DB_PORT: $$cap_db_port
+            DB_USER: $$cap_db_user
+            DB_PASS: $$cap_db_pass
+            DB_NAME: $$cap_db_name
+            AWS_ACCESS_KEY_ID: $$cap_aws_access_key_id
+            AWS_SECRET_ACCESS_KEY: $$cap_aws_secret_access_key
+            AWS_REGION: eu-central-1
+            S3_BUCKET: $$cap_s3_bucket
+        caproverExtra:
+            notExposeAsWebApp: 'true'
+caproverOneClickApp:
+    variables:
+        - id: $$cap_db_host
+          label: MySQL Host
+          description: ''
+        - id: $$cap_db_port
+          label: MySQL Port
+          description: ''
+        - id: $$cap_db_user
+          label: MySQL Database User
+          description: ''
+        - id: $$cap_db_name
+          label: MySQL Database Name
+          description: ''
+        - id: $$cap_db_pass
+          label: MySQL Database Password
+          description: ''
+        - id: $$cap_aws_access_key_id
+          label: AWS Access Key ID
+          description: ''
+        - id: $$cap_aws_secret_access_key
+          label: AWS Secret Access Key
+          description: ''
+        - id: $$cap_s3_bucket
+          label: S3 Bucketname
+          description: ''
+    instructions:
+        start: >-
+            This container enables you to backup the attached database to a given s3 bucket
+            The Aws User should have minimal rights (only access to the Bucket with PutObject and GetObject)
+        end: "Your container is deployed, it will now backup the attached db to the given s3 bucket"
+    displayName: MySQL backup to S3
+    description: backups a attached database to an s3 bucket
+    documentation: https://github.com/bitminds-OG/mysql-backup
