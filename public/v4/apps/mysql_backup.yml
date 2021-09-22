@@ -45,7 +45,7 @@ caproverOneClickApp:
         start: >-
             This container enables you to backup the attached database to a given s3 bucket
             The Aws User should have minimal rights (only access to the Bucket with PutObject and GetObject)
-        end: "Your container is deployed, it will now backup the attached db to the given s3 bucket"
+        end: 'Your container is deployed, it will now backup the attached db to the given s3 bucket'
     displayName: MySQL backup to S3
     description: backups a attached database to an s3 bucket
     documentation: https://github.com/bitminds-OG/mysql-backup
