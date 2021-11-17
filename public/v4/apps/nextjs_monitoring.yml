@@ -5,6 +5,8 @@ services:
         restart: always
         caproverExtra:
             containerHttpPort: '4000'
+        volumes:
+            - $$cap_appname-db-data:/app/data.db
         environment:
             NEXT_URL: $$cap_next_url
             PROMETHEUS_IP: $$cap_prometheus_ip
